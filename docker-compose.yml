@@ -1,0 +1,37 @@
+# to be used with https://github.com/jwilder/nginx-proxy
+
+version: "3"
+
+services:
+   tkwlive:
+      # TODO Change Docker Image Name
+      image: kracken/next-boilerplate
+
+      # TODO Change Docker Container Name
+      container_name: kraken-next-boilerplate
+      restart: always
+      links:
+         - mongo
+      expose:
+         # TODO Specify your Port
+         - 1337
+      environment:
+         # TODO Change URL
+         VIRTUAL_HOST: $URL
+
+         # TODO Change URL
+         LETSENCRYPT_HOST: $URL
+
+         # TODO Change Email
+         LETSENCRYPT_EMAIL: $EMAIL
+   mongo:
+      container_name: mongo
+      image: mongo
+      volumes:
+         - /root/data:/data/db
+      ports:
+         - "27017:27017"
+networks:
+   default:
+      external:
+         name: nginx-proxy

@@ -1,0 +1,22 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+/*---  Colors  ---*/
+@tikaway              : #173a52;
+
+
+/*---  Light Colors  ---*/
+@lightTikaway         : #275c80;
+
+
+/*-------------------
+    Brand Colors
+--------------------*/
+@primaryColor        : @tikaway;
+
+
+/*-------------------
+       Links
+--------------------*/
+@linkColor           : @tikaway;
